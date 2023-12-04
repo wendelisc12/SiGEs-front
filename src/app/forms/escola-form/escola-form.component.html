@@ -1,0 +1,45 @@
+<div class="formulario-container">
+  <h2>Formulário Escola</h2>
+  <form [formGroup]="escolaForm"(submit)="onSubmit()">
+    <label for="nomeAluno">Nome do Aluno:</label>
+    <input type="text" id="nomeAluno" name="nomeAluno" formControlName="nomeAluno" required>
+
+    <label for="nomeResponsavel">Nome do Responsável:</label>
+    <input type="text" id="nomeResponsavel" name="nomeResponsavel" formControlName="nomeResponsavel" required>
+
+    <label for="dataNascimento">Data de Nascimento:</label>
+    <input type="date" id="dataNascimento" name="dataNascimento" formControlName="dataNascimento" required>
+
+    <label for="serie">Série:</label>
+    <input type="text" id="serie" name="serie" formControlName="serie" required>
+
+    <label for="dataPagamento">Data de Pagamento:</label>
+    <input type="date" id="dataPagamento" name="dataPagamento" formControlName="dataPagamento" required>
+
+    <button type="submit" [disabled]="escolaForm.invalid">Enviar</button>
+ </form>
+
+
+</div>
+
+
+
+
+<div class="container mt-4">
+  <h2>Alunos Matriculados</h2>
+
+  <div *ngFor="let student of enrolledStudents" class="card mb-3">
+    <div class="card-header">
+      {{ student.nome_aluno }}
+    </div>
+    <div class="card-body">
+      <p class="card-text"><strong>Responsável:</strong> {{ student.nome_responsavel }}</p>
+      <p class="card-text"><strong>Data de Nascimento:</strong> {{ student.data_nascimento }}</p>
+      <p class="card-text"><strong>Série:</strong> {{ student.serie }}</p>
+      <p class="card-text"><strong>Data de Pagamento:</strong> {{ student.data_pagamento }}</p>
+
+      <button class="btn btn-danger" (click)="deleteStudent(student.id)">Delete</button>
+
+    </div>
+  </div>
+</div>
