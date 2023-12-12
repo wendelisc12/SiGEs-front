@@ -20,15 +20,7 @@ submittedFormData: any;
     this.loadEnrolledStudents(); // Load existing enrolled students when the component initializes
   }
 
-  initializeForm() {
-    this.escolaForm = this.formBuilder.group({
-      nomeAluno: ['', Validators.required],
-      nomeResponsavel: ['', Validators.required],
-      dataNascimento: ['', Validators.required],
-      serie: ['', Validators.required],
-      dataPagamento: ['', Validators.required]
-    });
-  }
+  initializeForm() { this.escolaForm = this.formBuilder.group({ nomeAluno: ['', Validators.required], nomeResponsavel: ['', Validators.required], dataNascimento: ['', Validators.required], serie: ['', Validators.required], dataPagamento: ['', Validators.required], cpfResponsavel: ['', Validators.required], telefone: ['', Validators.required], endereco: ['', Validators.required], cep: ['', Validators.required], identidadeAluno: ['', Validators.required], horario: ['', Validators.required], valorMensalidade: ['', Validators.required], }); }
 
 
   onSubmit() {

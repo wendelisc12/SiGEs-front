@@ -16,6 +16,27 @@
     <label for="dataPagamento">Data de Pagamento:</label>
     <input type="date" id="dataPagamento" name="dataPagamento" formControlName="dataPagamento" required>
 
+    <label for="cpfResponsavel">CPF do Responsável:</label>
+    <input type="text" id="cpfResponsavel" name="cpfResponsavel" formControlName="cpfResponsavel" required>
+
+    <label for="telefone">Telefone:</label>
+    <input type="text" id="telefone" name="telefone" formControlName="telefone" required>
+
+    <label for="endereco">Endereço:</label>
+    <input type="text" id="endereco" name="endereco" formControlName="endereco" required>
+
+    <label for="cep">CEP:</label>
+    <input type="text" id="cep" name="cep" formControlName="cep" required>
+
+    <label for="identidadeAluno">Identidade do Aluno:</label>
+    <input type="text" id="identidadeAluno" name="identidadeAluno" formControlName="identidadeAluno" required>
+
+    <label for="horario">Horário:</label>
+    <input type="text" id="horario" name="horario" formControlName="horario" required>
+
+    <label for="valorMensalidade">Valor da Mensalidade:</label>
+    <input type="text" id="valorMensalidade" name="valorMensalidade" formControlName="valorMensalidade" required>
+    
     <button type="submit" [disabled]="escolaForm.invalid">Enviar</button>
  </form>
 
@@ -37,6 +58,15 @@
       <p class="card-text"><strong>Data de Nascimento:</strong> {{ student.data_nascimento }}</p>
       <p class="card-text"><strong>Série:</strong> {{ student.serie }}</p>
       <p class="card-text"><strong>Data de Pagamento:</strong> {{ student.data_pagamento }}</p>
+      <p class="card-text"><strong>CPF do Responsavel:</strong> {{ student.cpf_responsavel }}</p>
+      <p class="card-text"><strong>Telefone:</strong> {{ student.telefone }}</p>
+      <p class="card-text"><strong>Endereço:</strong> {{ student.endereco }}</p>
+      <p class="card-text"><strong>CEP:</strong> {{ student.cep}}</p>
+      <p class="card-text"><strong>Identidade do Aluno:</strong> {{ student.identidade_aluno }}</p>
+      <p class="card-text"><strong>Horário:</strong> {{ student.horario }}</p>
+      <p class="card-text"><strong>Valor da Mensalidade:</strong> {{ student.valor_mensalidade }}</p>
+      
+
 
       <button class="btn btn-danger" (click)="deleteStudent(student.id)">Delete</button>
 
