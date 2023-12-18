@@ -2,12 +2,13 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { EscolaService } from '../../services/escola.service';
 
+
 @Component({
-  selector: 'app-escola',
-  templateUrl: './escola-form.component.html',
-  styleUrls: ['./escola-form.component.css']
+  selector: 'app-adicionar-alunos',
+  templateUrl: './adicionar-alunos.component.html',
+  styleUrls: ['./adicionar-alunos.component.css']
 })
-export class EscolaComponent implements OnInit {
+export class AdicionarAlunoComponent implements OnInit {
 
   escolaForm!: FormGroup;
   enrolledStudents: any[] = [];
