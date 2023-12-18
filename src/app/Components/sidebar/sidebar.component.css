@@ -1,0 +1,14 @@
+/* sidebar.component.css */
+mat-nav-list {
+    width: 200px;
+  }
+  
+  a {
+    text-decoration: none;
+    color: #333;
+  }
+  
+  a:hover {
+    background-color: #eee;
+  }
+  
