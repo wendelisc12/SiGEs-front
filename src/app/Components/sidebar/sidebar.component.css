@@ -1,14 +1,111 @@
 /* sidebar.component.css */
 mat-nav-list {
-    width: 200px;
-  }
-  
-  a {
-    text-decoration: none;
-    color: #333;
-  }
-  
-  a:hover {
-    background-color: #eee;
-  }
-  
+  width: 280px;
+  height: 99vh;
+  overflow-y: none !important;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+#logo-box {
+  display: flex;
+  height: 100px;
+  align-items: center;
+  justify-content: center;
+}
+
+a {
+  width: 250px;
+  text-decoration: none;
+  margin: 20px 10px;
+  padding: 30px 15px;
+  border-radius: 10px;
+}
+
+.item-list {
+  display: flex;
+  color: #555;
+  align-items: center;
+  font-weight: 500;
+}
+
+mat-icon {
+  margin-right: 15px;
+  width: 35px;
+  height: 35px;
+  font-size: 35px;
+  color: #555 !important;
+}
+
+a:hover{
+  background-color: #FFF647;
+  color: black;
+}
+
+a:hover .item-list{
+  color: #000;
+}
+
+a:hover mat-icon{
+  color: #000 !important;
+}
+
+#logo-image {
+  margin-top: 20px;
+  width: 250px;
+  height: 120px;
+  background-image: url('../../../assets/logo-escola.png');
+  background-position: center bottom;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.active{
+  background-color: #FFF647;
+  color: black !important;
+}
+.active .item-list{
+  color: black !important;
+}
+
+.active mat-icon{
+  color: black !important;
+}
+
+.menu-item {
+  position: relative;
+}
+
+.sub-menu {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #fff; /* Adapte conforme necessário */
+  z-index: 1;
+}
+.submenu-item{
+  height: 50px !important;
+  margin: 0;
+}
+
+::ng-deep .custom-menu-background{
+  background-color: #FFF647;
+  border-radius: 0 0 14px 14px !important;
+  box-shadow: none !important;
+  transition: all 400ms !important;
+}
+
+.menu-opened {
+  background-color: #FFF647;
+  border-radius: 14px 14px 0 0;
+  transition: all 400ms !important; 
+}
+
+.menu-opened .item-list,.menu-opened mat-icon{
+  color: black !important;
+}
