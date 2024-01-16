@@ -1,2 +1,101 @@
+<div id="principal-container">
+    <div id="titulo-container">
+        <h1>Adicionar um aluno</h1>
 
-<app-adicionar-alunos></app-adicionar-alunos>
+    </div>
+    <h2 class="basic-infos">Informações básicas</h2>
+    <div id="form-container">
+        <div class="form-group">
+            <mat-form-field class="container-50">
+                <mat-label>Nome do aluno</mat-label>
+                <input matInput>
+            </mat-form-field>
+            <mat-form-field class="container-50">
+                <mat-label>Nome do responsável</mat-label>
+                <input matInput>
+            </mat-form-field>
+        </div>
+
+        <div class="form-group">
+            <mat-form-field class="container-50">
+                <mat-label>Data de nascimento</mat-label>
+                <input matInput [matDatepicker]="picker" placeholder="Data de nascimento do aluno">
+                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
+            </mat-form-field>
+
+            <mat-form-field class="container-50">
+                <mat-label>CPF do responsável</mat-label>
+                <input matInput>
+            </mat-form-field>
+        </div>
+
+        <div class="form-group">
+            <mat-form-field class="container-50">
+                <mat-label>Identidade do aluno</mat-label>
+                <input matInput>
+            </mat-form-field>
+
+            <mat-form-field class="container-50">
+                <mat-label>Telefone</mat-label>
+                <input matInput>
+            </mat-form-field>
+        </div>
+
+        <hr>
+
+        <h2 class="basic-infos">Informações escolares</h2>
+        <div class="form-group">
+            <mat-form-field class="container-100">
+                <mat-label>Matrícula</mat-label>
+                <input matInput>
+            </mat-form-field>
+        </div>
+        
+        <div class="form-group">
+            <mat-form-field class="container-50">
+                <mat-label>Turno</mat-label>
+                <mat-select>
+                  <mat-option value="manha">Manhã</mat-option>
+                  <mat-option value="tarde">Tarde</mat-option>
+                </mat-select>
+              </mat-form-field>
+
+            <mat-form-field class="container-50">
+                <mat-label>Série</mat-label>
+                <input matInput>
+            </mat-form-field>
+        </div>
+
+        <hr>
+        <h2 class="basic-infos">Endereço</h2>
+        <div class="form-group">
+            <mat-form-field class="container-70">
+                <mat-label>Endereço</mat-label>
+                <input matInput>
+            </mat-form-field>
+            <mat-form-field class="container-30">
+                <mat-label>CEP</mat-label>
+                <input matInput>
+            </mat-form-field>
+        </div>
+
+        <hr>
+        <h2 class="basic-infos">Informações de pagamento</h2>
+        <div class="form-group">
+            <mat-form-field class="container-50">
+                <mat-label>Data de pagamento</mat-label>
+                <input matInput [matDatepicker]="picker" placeholder="Data de nascimento do aluno">
+                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
+            </mat-form-field>
+            <mat-form-field class="container-50">
+                <mat-label>Valor da mensalidade</mat-label>
+                <input matInput>
+            </mat-form-field>
+        </div>
+
+        <button class="container-100 submit-button">Adicionar</button>
+
+    </div>
+</div>
