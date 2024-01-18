@@ -1,0 +1,29 @@
+.consultar-box{
+    margin: 20px;
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 0 0 3px rgba(82, 82, 82, 0.514);
+    padding: 40px 30px;
+    height: 500px;
+}
+
+#documentos-box{
+    border: 3px solid rgb(124, 124, 124);
+    background-color: rgba(124, 124, 124, 0.171);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    width: 250px;
+    height: 150px;
+    border-radius: 15px;
+    margin-top: 40px;
+}
+#documentos-box svg{
+    flex: 1;
+}
+
+#documentos{
+    display: none;
+}
