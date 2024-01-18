@@ -1,1 +1,36 @@
-<h2>Financeiro</h2>
+<div class="pesquisa-box">
+    <app-pesquisa-aluno></app-pesquisa-aluno>
+</div>
+
+<div class="tabela-alunos">
+    <mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+        <ng-container matColumnDef="matricula">
+          <mat-header-cell *matHeaderCellDef> Matrícula </mat-header-cell>
+          <mat-cell *matCellDef="let element"> {{element.matricula}} </mat-cell>
+        </ng-container>
+      
+
+        <ng-container matColumnDef="name">
+          <mat-header-cell *matHeaderCellDef> Nome </mat-header-cell>
+          <mat-cell *matCellDef="let element"> {{element.name}} </mat-cell>
+        </ng-container>
+    
+        <ng-container matColumnDef="dataPagamento">
+          <mat-header-cell *matHeaderCellDef> Data de pagamento </mat-header-cell>
+          <mat-cell *matCellDef="let element"> {{element.dataPagamento}} </mat-cell>
+        </ng-container>
+      
+        <ng-container matColumnDef="situacao">
+          <mat-header-cell *matHeaderCellDef> Situação </mat-header-cell>
+          <mat-cell *matCellDef="let element"> {{element.situacao}} </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="vizualizar">
+            <mat-header-cell *matHeaderCellDef>  </mat-header-cell>
+            <mat-cell *matCellDef="let element"> <a href={{element.vizualizar}}> Acessar aluno </a></mat-cell>
+          </ng-container>
+      
+        <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+      </mat-table>
+</div>
