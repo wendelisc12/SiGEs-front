@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { MatDatepickerInputEvent } from '@angular/material/datepicker';
+import * as moment from 'moment';
 
 @Component({
   selector: 'app-adicionar-alunos-page',
@@ -7,10 +8,18 @@ import { MatDatepickerInputEvent } from '@angular/material/datepicker';
   styleUrls: ['./adicionar-alunos-page.component.css'],
 })
 export class AdicionarAlunosPageComponent {
-  selectedDate: Date | null = null; // Inicializando a propriedade com null
-
-  // Método chamado quando a data é selecionada no datepicker
+  selectedDate: Date | null = null;
   dateChanged(event: MatDatepickerInputEvent<Date, unknown>) {
     this.selectedDate = event.value;
+  }
+
+  onDateChange(event: MatDatepickerInputEvent<Date>) {
+    if (event.value) {
+      let date: Date = event.value;
+      let formattedDate = moment(date).format('DD/MM/YYYY');
+      console.log(formattedDate);
+    } else {
+      console.log('Nenhuma data selecionada');
+    }
   }
 }

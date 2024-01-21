@@ -1,15 +1,9 @@
 import { Component } from '@angular/core';
 import { PesquisaAlunoComponent } from 'src/app/Components/pesquisa-aluno/pesquisa-aluno.component';
+import { consultarAluno } from 'src/app/features/consultarAlunosInterface';
 
-export interface PeriodicElement {
-  name: string;
-  matricula: string;
-  serie: string;
-  turno: string;
-  vizualizar: string;
-}
 
-const ELEMENT_DATA: PeriodicElement[] = [
+const ELEMENT_DATA: consultarAluno[] = [
     {matricula: "101", name: 'Alice', serie: '1º ano', turno: 'Manhã', vizualizar:""},
     {matricula: '202', name: 'Bob', serie: '2º ano', turno: 'Tarde', vizualizar:""},
     {matricula: '303', name: 'Charlie', serie: '3º ano', turno: 'Manhã', vizualizar:""},

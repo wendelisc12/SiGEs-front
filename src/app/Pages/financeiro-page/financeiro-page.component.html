@@ -21,8 +21,8 @@
         </ng-container>
       
         <ng-container matColumnDef="situacao">
-          <mat-header-cell *matHeaderCellDef> Situação </mat-header-cell>
-          <mat-cell *matCellDef="let element"> {{element.situacao}} </mat-cell>
+          <mat-header-cell *matHeaderCellDef> </mat-header-cell>
+          <mat-cell *matCellDef="let element" > <span [ngClass]="element.situacao == 'Adimplente' ? 'adimplente' : 'inadimplente'">{{element.situacao}}</span> </mat-cell>
         </ng-container>
 
         <ng-container matColumnDef="vizualizar">

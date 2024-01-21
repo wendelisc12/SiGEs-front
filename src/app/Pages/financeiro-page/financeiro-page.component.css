@@ -14,3 +14,20 @@
     width: 100% !important;
     border-radius: 20px !important;
 }
+
+.adimplente, .inadimplente{
+    color: white;
+    font-weight: 800;
+    width: 140px;
+    padding: 8px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.adimplente{
+    background-color: #11cc3c;
+}
+
+.inadimplente{
+    background-color: #e62538;
+}

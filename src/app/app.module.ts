@@ -8,6 +8,7 @@ import { MatMenuModule } from '@angular/material/menu';
 import {MatTableModule} from '@angular/material/table';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
+import { MAT_DATE_FORMATS } from '@angular/material/core';
 import {MatSelectModule} from '@angular/material/select';
 import {MatInputModule} from '@angular/material/input';
 import { MatDatepickerModule } from '@angular/material/datepicker';
@@ -28,6 +29,19 @@ import { MatListModule } from '@angular/material/list';
 import { FinanceiroPageComponent } from './Pages/financeiro-page/financeiro-page.component';
 import { DocumentacaoPageComponent } from './Pages/documentacao-page/documentacao-page.component';
 import { PesquisaAlunoComponent } from './Components/pesquisa-aluno/pesquisa-aluno.component';
+
+
+export const MY_DATE_FORMATS = {
+  parse: {
+    dateInput: 'LL',
+  },
+  display: {
+    dateInput: 'DD/MM/YYYY',
+    monthYearLabel: 'MM YYYY',
+    dateA11yLabel: 'LL',
+    monthYearA11yLabel: 'MM YYYY',
+  },
+};
 
 @NgModule({
   declarations: [
@@ -54,7 +68,7 @@ import { PesquisaAlunoComponent } from './Components/pesquisa-aluno/pesquisa-alu
     MatListModule,
     MatTableModule
   ],
-  providers: [],
+  providers: [{ provide: MAT_DATE_FORMATS, useValue: MY_DATE_FORMATS }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
