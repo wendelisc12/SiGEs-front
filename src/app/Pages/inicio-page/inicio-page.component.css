@@ -1,0 +1,8 @@
+#inicio-box{
+    background-color: white;
+    box-shadow: 2px 2px 5px rgba(95, 95, 95, 0.3) ;
+    border-radius: 20px;
+    height: 100%;
+    margin: 10px;
+    padding: 20px;
+}

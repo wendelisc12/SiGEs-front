@@ -1,0 +1,33 @@
+.pesquisa-box, .tabela-alunos{
+    margin: 20px;
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 0 0 3px rgba(82, 82, 82, 0.514);
+}
+
+.pesquisa-box{
+    padding: 40px 30px;
+}
+
+.mat-elevation-z8{
+    box-shadow: none !important;
+    width: 100% !important;
+    border-radius: 20px !important;
+}
+
+.adimplente, .inadimplente{
+    color: white;
+    font-weight: 800;
+    width: 140px;
+    padding: 8px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.adimplente{
+    background-color: #11cc3c;
+}
+
+.inadimplente{
+    background-color: #e62538;
+}

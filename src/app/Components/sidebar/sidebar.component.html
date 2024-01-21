@@ -1,9 +1,41 @@
-<!-- sidebar.component.html -->
 <mat-nav-list>
-  <a mat-list-item routerLink="/inicio">Início</a>
-  <a mat-list-item routerLink="/matricular-alunos">Matricular Alunos</a>
-  <a mat-list-item routerLink="/documentos">Documentos</a>
-  <a mat-list-item routerLink="/financeiro">Financeiro</a>
-  <a mat-list-item routerLink="/professores">Professores</a>
-  <a mat-list-item routerLink="/turmas">Turmas</a>
+  <div id="logo-box">
+    <div id="logo-image"></div>
+  </div>
+  <div>
+    <a mat-list-item routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+      <div class="item-list">
+        <mat-icon>home</mat-icon>
+        Início
+      </div>
+    </a>
+
+    <!-- Dropdown para a opção "Aluno" -->
+    <a mat-list-item [matMenuTriggerFor]="alunoMenu" routerLink="/aluno" routerLinkActive="active" [class.menu-opened]="showAlunoMenu" (click)="toggleAlunoMenu()">
+      <div class="item-list">
+        <mat-icon>person</mat-icon>
+        Alunos
+      </div>
+    </a>
+    <mat-menu class="custom-menu-background" #alunoMenu="matMenu">
+      <a class="submenu-item" mat-menu-item routerLink="/aluno/adicionar">Adicionar aluno</a>
+      <a class="submenu-item" mat-menu-item routerLink="/aluno/consultar">Consultar aluno</a>
+      <!-- Adicione mais opções conforme necessário -->
+    </mat-menu>
+
+    <a mat-list-item routerLink="/financeiro" routerLinkActive="active">
+      <div class="item-list">
+        <mat-icon>account_balance_wallet</mat-icon>
+        Financeiro
+      </div>
+    </a>
+
+    <a mat-list-item routerLink="/documentacao" routerLinkActive="active">
+      <div class="item-list">
+        <mat-icon>description</mat-icon>
+        Documentação
+      </div>
+    </a>
+  </div>
+  <div><br><br><br></div>
 </mat-nav-list>

@@ -1,0 +1,36 @@
+<div class="pesquisa-box">
+    <app-pesquisa-aluno></app-pesquisa-aluno>
+</div>
+
+<div class="tabela-alunos">
+    <mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+        <ng-container matColumnDef="matricula">
+          <mat-header-cell *matHeaderCellDef> Matrícula </mat-header-cell>
+          <mat-cell *matCellDef="let element"> {{element.matricula}} </mat-cell>
+        </ng-container>
+      
+
+        <ng-container matColumnDef="name">
+          <mat-header-cell *matHeaderCellDef> Nome </mat-header-cell>
+          <mat-cell *matCellDef="let element"> {{element.name}} </mat-cell>
+        </ng-container>
+    
+        <ng-container matColumnDef="serie">
+          <mat-header-cell *matHeaderCellDef> Série </mat-header-cell>
+          <mat-cell *matCellDef="let element"> {{element.serie}} </mat-cell>
+        </ng-container>
+      
+        <ng-container matColumnDef="turno">
+          <mat-header-cell *matHeaderCellDef> Turno </mat-header-cell>
+          <mat-cell *matCellDef="let element"> {{element.turno}} </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="vizualizar">
+            <mat-header-cell *matHeaderCellDef>  </mat-header-cell>
+            <mat-cell *matCellDef="let element"> <a href={{element.vizualizar}}> Acessar aluno </a></mat-cell>
+          </ng-container>
+      
+        <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+      </mat-table>
+</div>
