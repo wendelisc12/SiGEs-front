@@ -27,7 +27,7 @@
 
         <ng-container matColumnDef="vizualizar">
             <mat-header-cell *matHeaderCellDef>  </mat-header-cell>
-            <mat-cell *matCellDef="let element"> <a href={{element.vizualizar}}> Acessar aluno </a></mat-cell>
+            <mat-cell *matCellDef="let element"> <a routerLink="detalhes/id"> Acessar aluno </a></mat-cell>
           </ng-container>
       
         <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
