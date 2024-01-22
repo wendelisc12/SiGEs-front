@@ -29,6 +29,7 @@ import { MatListModule } from '@angular/material/list';
 import { FinanceiroPageComponent } from './Pages/financeiro-page/financeiro-page.component';
 import { DocumentacaoPageComponent } from './Pages/documentacao-page/documentacao-page.component';
 import { PesquisaAlunoComponent } from './Components/pesquisa-aluno/pesquisa-aluno.component';
+import { VizualizarAlunoPageComponent } from './vizualizar-aluno-page/vizualizar-aluno-page.component';
 
 
 export const MY_DATE_FORMATS = {
@@ -45,7 +46,7 @@ export const MY_DATE_FORMATS = {
 
 @NgModule({
   declarations: [
-    AppComponent,ConsultarAlunoPageComponent,PesquisaAlunoComponent, AdicionarAlunosPageComponent, InicioPageComponent, SidebarComponent, FinanceiroPageComponent, DocumentacaoPageComponent,
+    AppComponent,ConsultarAlunoPageComponent,PesquisaAlunoComponent, AdicionarAlunosPageComponent, InicioPageComponent, SidebarComponent, FinanceiroPageComponent, DocumentacaoPageComponent, VizualizarAlunoPageComponent,
   ],
   imports: [
     BrowserModule,
