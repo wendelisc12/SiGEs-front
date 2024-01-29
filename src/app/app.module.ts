@@ -31,6 +31,7 @@ import { DocumentacaoPageComponent } from './Pages/documentacao-page/documentaca
 import { PesquisaAlunoComponent } from './Components/pesquisa-aluno/pesquisa-aluno.component';
 import { VizualizarAlunoPageComponent } from './vizualizar-aluno-page/vizualizar-aluno-page.component';
 
+import { EscolaService } from './services/escola.service';
 
 export const MY_DATE_FORMATS = {
   parse: {
@@ -69,7 +70,7 @@ export const MY_DATE_FORMATS = {
     MatListModule,
     MatTableModule
   ],
-  providers: [{ provide: MAT_DATE_FORMATS, useValue: MY_DATE_FORMATS }],
+  providers: [{ provide: MAT_DATE_FORMATS, useValue: MY_DATE_FORMATS }, EscolaService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

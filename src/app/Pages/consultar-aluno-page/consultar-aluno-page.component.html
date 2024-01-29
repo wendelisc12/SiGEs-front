@@ -12,7 +12,7 @@
 
         <ng-container matColumnDef="name">
           <mat-header-cell *matHeaderCellDef> Nome </mat-header-cell>
-          <mat-cell *matCellDef="let element"> {{element.name}} </mat-cell>
+          <mat-cell *matCellDef="let element"> {{element.nome_aluno}} </mat-cell>
         </ng-container>
     
         <ng-container matColumnDef="serie">
@@ -22,7 +22,7 @@
       
         <ng-container matColumnDef="turno">
           <mat-header-cell *matHeaderCellDef> Turno </mat-header-cell>
-          <mat-cell *matCellDef="let element"> {{element.turno}} </mat-cell>
+          <mat-cell *matCellDef="let element"> {{element.horario}} </mat-cell>
         </ng-container>
 
         <ng-container matColumnDef="vizualizar">
