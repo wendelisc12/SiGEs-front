@@ -2,7 +2,31 @@
     background-color: white;
     box-shadow: 2px 2px 5px rgba(95, 95, 95, 0.3) ;
     border-radius: 20px;
-    height: 100%;
     margin: 10px;
     padding: 20px;
+}
+
+.title-inicio{
+    padding: 20px 10px;
+}
+
+.title-inicio h1{
+    font-size: 2.4em;
+}
+
+.principal-inicio{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+}
+
+.w-50{
+    width: 49%;
+}
+.illustration{
+    height: 400px;
+    background-image: url('../../../assets/illustration-painel.svg');
+    background-position: center;
+    background-repeat: no-repeat;
 }
