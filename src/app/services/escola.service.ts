@@ -22,7 +22,7 @@ export class EscolaService {
     return this.http.post(this.apiUrl, aluno);
   }
 
-  updateAluno(id: number, aluno: any): Observable<any> {
+  updateAluno(id: string, aluno: any): Observable<any> {
     return this.http.put(`${this.apiUrl}/${id}`, aluno);
   }
 

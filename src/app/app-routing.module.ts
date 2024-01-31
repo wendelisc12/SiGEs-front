@@ -11,8 +11,8 @@ import { FinanceiroAlunoPageComponent } from './Pages/financeiro-aluno-page/fina
 const routes: Routes = [
   { path: 'aluno/consultar/detalhes/:id', component: VizualizarAlunoPageComponent },
   { path: 'aluno/adicionar', component: AdicionarAlunosPageComponent },
+  { path: 'aluno/editar/:id', component: AdicionarAlunosPageComponent },
   { path: 'aluno/consultar', component: ConsultarAlunoPageComponent },
-  { path: 'adicionarAluno', component: AdicionarAlunosPageComponent },
   { path: 'financeiro/aluno/:id', component: FinanceiroAlunoPageComponent },
   { path: 'financeiro', component: FinanceiroPageComponent },
   { path: 'documentacao', component: DocumentacaoPageComponent },
