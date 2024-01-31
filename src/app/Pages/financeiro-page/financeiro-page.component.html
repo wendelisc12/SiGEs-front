@@ -12,22 +12,22 @@
 
         <ng-container matColumnDef="name">
           <mat-header-cell *matHeaderCellDef> Nome </mat-header-cell>
-          <mat-cell *matCellDef="let element"> {{element.name}} </mat-cell>
+          <mat-cell *matCellDef="let element"> {{element.nome_aluno}} </mat-cell>
         </ng-container>
     
         <ng-container matColumnDef="dataPagamento">
           <mat-header-cell *matHeaderCellDef> Data de pagamento </mat-header-cell>
-          <mat-cell *matCellDef="let element"> {{element.dataPagamento}} </mat-cell>
+          <mat-cell *matCellDef="let element"> {{element.data_pagamento}} </mat-cell>
         </ng-container>
       
         <ng-container matColumnDef="situacao">
-          <mat-header-cell *matHeaderCellDef> </mat-header-cell>
-          <mat-cell *matCellDef="let element" > <span [ngClass]="element.situacao == 'Adimplente' ? 'adimplente' : 'inadimplente'">{{element.situacao}}</span> </mat-cell>
-        </ng-container>
+          <mat-header-cell *matHeaderCellDef> Situação </mat-header-cell>
+          <mat-cell *matCellDef="let element"> <span [ngClass]="element.situacao == 'Adimplente' ? 'adimplente' : 'inadimplente'">{{element.situacao}}</span> </mat-cell>
+        </ng-container>        
 
         <ng-container matColumnDef="vizualizar">
             <mat-header-cell *matHeaderCellDef>  </mat-header-cell>
-            <mat-cell *matCellDef="let element"> <a href={{element.vizualizar}}> Acessar aluno </a></mat-cell>
+            <mat-cell *matCellDef="let element"> <a [routerLink]="['aluno', element.id]"> Acessar aluno </a></mat-cell>
           </ng-container>
       
         <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>

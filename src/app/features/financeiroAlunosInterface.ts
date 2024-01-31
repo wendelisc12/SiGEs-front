@@ -1,7 +1,8 @@
 export interface financeiroAlunos {
+    id:string;
     name: string;
     matricula: string;
-    dataPagamento: string;
+    data_pagamento: string;
     situacao: string;
     vizualizar: string;
   }
