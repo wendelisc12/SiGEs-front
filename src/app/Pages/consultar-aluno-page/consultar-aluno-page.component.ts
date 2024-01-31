@@ -10,6 +10,7 @@ import { consultarAluno } from 'src/app/features/consultarAlunosInterface';
 })
 export class ConsultarAlunoPageComponent {
 
+  dadosPesquisa: any;
   alunos: consultarAluno[] = [];
   displayedColumns: string[] = ['matricula', 'name', 'serie', 'turno', 'vizualizar'];
 
@@ -32,5 +33,19 @@ export class ConsultarAlunoPageComponent {
   }
   get dataSource(): consultarAluno[] {
     return this.alunos;
+  }
+
+  pesquisar(dados:any):void{
+    this.dadosPesquisa = dados;
+
+    this.escolaService.pesquisarAlunos(dados).subscribe(
+      (alunosPesquisados) => {
+        console.log('Alunos pesquisados:', alunosPesquisados);
+        this.alunos = alunosPesquisados
+      },
+      (erro) => {
+        console.error('Erro na pesquisa de alunos', erro);
+      }
+    );
   }
 }
