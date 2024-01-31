@@ -75,4 +75,7 @@ export class FinanceiroAlunoPageComponent {
     }
   }
   
+  closeModal():void{
+    this.isModalOpen = false
+  }
 }

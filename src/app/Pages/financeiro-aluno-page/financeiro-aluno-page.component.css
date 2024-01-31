@@ -181,6 +181,24 @@ hr {
     margin-bottom: 20px;
 }
 
+.fechar-pagamento{
+    border: 0;
+    height: 50px;
+    width: 100%;
+    border-radius: 5px;
+    margin-top: 10px;
+    font-size: 1.2em;
+    font-weight: 600;
+    cursor: pointer;
+    margin-right: 20px;
+    transition: all 400ms;
+    color: #e62538;
+    background-color: transparent;
+}
+.fechar-pagamento:hover{
+    filter: brightness(0.7);
+}
+
 .atualizar-pagamento{
     border: 0;
     height: 50px;
