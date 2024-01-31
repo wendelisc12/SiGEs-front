@@ -11,7 +11,6 @@ import { EscolaService } from 'src/app/services/escola.service';
 export class FinanceiroPageComponent implements OnInit {
   alunos: financeiroAlunos[] = [];
   displayedColumns: string[] = ['matricula', 'name', 'dataPagamento', 'situacao', "vizualizar"];
-  alunoSituacao = ""
 
   constructor(private escolaService: EscolaService) {}
 

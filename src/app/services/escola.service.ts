@@ -29,4 +29,13 @@ export class EscolaService {
   deleteAluno(id: string): Observable<any> {
     return this.http.delete(`${this.apiUrl}/${id}`);
   }
+  pesquisarAlunos(pesquisa: any): Observable<any> {
+    return this.http.post(`${this.apiUrl}/pesquisar-alunos`, pesquisa);
+  }
+  updateDataPagamento(id: string, data_pagamento: string): Observable<any> {
+    const payload = { data_pagamento: data_pagamento };
+    const headers = { 'Content-Type': 'application/json' };
+  
+    return this.http.put(`${this.apiUrl}/atualizar-pagamento/${id}`, payload, { headers: headers });
+  }
 }
