@@ -9,7 +9,7 @@
 .header-vizualizar {
     display: flex;
     justify-content: space-between;
-    padding: 10px 0;
+    padding: 20px 0;
     align-items: center;
 }
 
@@ -22,9 +22,15 @@ hr {
     font-weight: 800;
 }
 
-.header-vizualizar button {
-    width: 120px;
-    height: 40px;
+.buttons-vizualizar{
+    display: flex;
+    justify-content: space-between;
+    margin:30px 0;
+}
+
+.buttons-vizualizar button {
+    width: 49%;
+    height: 50px;
     border: 0;
     cursor: pointer;
     border-radius: 8px;
@@ -37,11 +43,11 @@ hr {
     justify-content: center;
 }
 
-.header-vizualizar button svg {
+.buttons-vizualizar button svg {
     margin-right: 8px;
 }
 
-.header-vizualizar button:hover {
+.buttons-vizualizar button:hover {
     filter: brightness(0.9);
 }
 
@@ -64,7 +70,17 @@ hr {
 .section-vizualizar h1 {
     margin: 0;
     padding: 0;
-    font-size: 1.8em;
+    font-size: 1.7em;
+}
+
+.side-side{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.w-50{
+    width: 48%;
 }
 
 .section-vizualizar h2 {

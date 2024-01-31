@@ -11,7 +11,7 @@ import Swal from 'sweetalert2';
 })
 export class VizualizarAlunoPageComponent {
   id: string = '';
-  aluno:detalhesAluno = {matricula: '',nome_aluno: '',nome_responsavel: '',data_nascimento: '',cpf_responsavel: '',identidade_aluno: '',telefone: '',horario: '',serie: '',endereco: '',cep: '',data_pagamento: '',valor_mensalidade: ''}
+  aluno:detalhesAluno = {id: '', matricula: '',nome_aluno: '',nome_responsavel: '',data_nascimento: '',cpf_responsavel: '',identidade_aluno: '',telefone: '',horario: '',serie: '',endereco: '',cep: '',data_pagamento: '',valor_mensalidade: ''}
   isModalOpen = false;
 
   constructor(private router: Router,private route: ActivatedRoute, private escolaService: EscolaService) { }
@@ -54,6 +54,10 @@ export class VizualizarAlunoPageComponent {
         console.error('Erro ao excluir aluno:', error);
       }
     );
+  }
+
+  onEditClick(): void{
+    this.router.navigate(['/aluno/editar', this.id]);
   }
   
   

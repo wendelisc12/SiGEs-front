@@ -1,5 +1,6 @@
 
 export class Aluno {
+    id:string;
     matricula: string;
     nome_aluno: string;
     nome_responsavel: string;
@@ -15,6 +16,7 @@ export class Aluno {
     valor_mensalidade: string;
   
     constructor() {
+      this.id = '';
       this.matricula = '';
       this.nome_aluno = '';
       this.nome_responsavel = '';

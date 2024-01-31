@@ -80,10 +80,10 @@
         <div class="form-group">
             <mat-form-field class="container-50">
                 <mat-label>Data de pagamento</mat-label>
-                <input matInput [matDatepicker]="pickerPagamento" placeholder="Data de pagamento" name="data_pagamento" required (dateChange)="onDateChange($event, 'pagamento')">
+                <input matInput [matDatepicker]="pickerPagamento" placeholder="Data de pagamento" name="data_pagamento" required (dateChange)="onDateChange($event, 'pagamento')" [ngModel]="selectedDate">
                 <mat-datepicker-toggle matSuffix [for]="pickerPagamento"></mat-datepicker-toggle>
                 <mat-datepicker #pickerPagamento></mat-datepicker>
-            </mat-form-field>
+              </mat-form-field>              
 
             <mat-form-field class="container-50">
                 <mat-label>Valor da mensalidade</mat-label>

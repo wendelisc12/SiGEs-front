@@ -71,9 +71,7 @@
         <h2>Situação atual:</h2>
         <h1 [ngClass]="aluno.situacao == 'Adimplente' ? 'adimplente' : 'inadimplente'">{{aluno.situacao}}</h1>
         <div class="buttons-pagamento">
-            <button class="atualizar" *ngIf="aluno.situacao == 'Inadimplente'"
-                (click)="onAtualizarPagamentoModal()">Atualizar pagamento</button>
-            <button class="editar">Editar pagamento</button>
+            <button class="atualizar" (click)="onAtualizarPagamentoModal()">Atualizar pagamento</button>
         </div>
     </div>
 

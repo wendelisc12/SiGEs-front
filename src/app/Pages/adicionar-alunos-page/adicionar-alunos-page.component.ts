@@ -17,13 +17,33 @@ export class AdicionarAlunosPageComponent {
 
   aluno:Aluno = new Aluno()
 
-  constructor(private router: Router, private escolaService:EscolaService) {}
+  constructor(private router: Router, private escolaService:EscolaService,private route: ActivatedRoute) {}
 
   selectedDate: Date | null = null;
   dateChanged(event: MatDatepickerInputEvent<Date, unknown>) {
     this.selectedDate = event.value;
   }
 
+  ngOnInit(): void {
+    this.route.params.subscribe(params => {
+      const alunoId = params['id'];
+      if (alunoId) {
+        this.carregarDadosAlunoParaEdicao(alunoId);
+      }
+    });
+  }
+
+  private carregarDadosAlunoParaEdicao(alunoId: string): void {
+    this.escolaService.getAluno(alunoId).subscribe(
+      (aluno: Aluno) => {
+        this.aluno = aluno;
+      },
+      (error) => {
+        console.error('Erro ao carregar dados do aluno para edição:', error);
+      }
+    );
+  }
+  
 
   onDateChange(event: MatDatepickerInputEvent<Date>, campoData: string): void {
     if (event.value) {
@@ -48,39 +68,33 @@ export class AdicionarAlunosPageComponent {
     const anoAtual = new Date().getFullYear();
     this.aluno.matricula = `MAT${Math.floor(1000 + Math.random() * 9000).toString()}-${anoAtual}`;
   }
+  
 
-  adicionarAluno(form: NgForm): void { 
+  adicionarAluno(form: NgForm): void {
     if (form.valid) {
-      this.gerarMatricula()
-      console.log(this.aluno)
-
-      const novoAluno = {
-        matricula: this.aluno.matricula,
-        nome_aluno: this.aluno.nome_aluno,
-        nome_responsavel: this.aluno.nome_responsavel,
-        data_nascimento: this.aluno.data_nascimento,
-        serie: this.aluno.serie,
-        data_pagamento: this.aluno.data_pagamento,
-        cpf_responsavel: this.aluno.cpf_responsavel,
-        telefone: this.aluno.telefone,
-        endereco: this.aluno.endereco,
-        cep: this.aluno.cep,
-        identidade_aluno: this.aluno.identidade_aluno,
-        horario: this.aluno.horario,
-        valor_mensalidade: this.aluno.valor_mensalidade,
-      };
-
-      this.escolaService.addAluno(novoAluno).subscribe(
-        (response) => {          
-          this.router.navigate(['aluno/consultar']);
-          Swal.fire('Sucesso!', 'Aluno adicionado com sucesso!', 'success');  
-        },
-        (error) => {
-          console.error('Erro ao adicionar aluno:', error);
-        }
-      );
-      console.log('Dados o Aluno:', this.aluno);
-
+      this.gerarMatricula();
+  
+      if (this.aluno.id) {
+        this.escolaService.updateAluno(this.aluno.id, this.aluno).subscribe(
+          (response) => {
+            this.router.navigate(['aluno/consultar']);
+            Swal.fire('Sucesso!', 'Aluno atualizado com sucesso!', 'success');
+          },
+          (error) => {
+            console.error('Erro ao atualizar aluno:', error);
+          }
+        );
+      } else {
+        this.escolaService.addAluno(this.aluno).subscribe(
+          (response) => {
+            this.router.navigate(['aluno/consultar']);
+            Swal.fire('Sucesso!', 'Aluno adicionado com sucesso!', 'success');
+          },
+          (error) => {
+            console.error('Erro ao adicionar aluno:', error);
+          }
+        );
+      }
     }
   }
 

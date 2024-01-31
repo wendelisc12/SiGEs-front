@@ -1,4 +1,5 @@
 export interface detalhesAluno{
+    id:string,
     matricula:string,
     nome_aluno:string,
     nome_responsavel:string,
