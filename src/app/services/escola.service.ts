@@ -14,7 +14,7 @@ export class EscolaService {
     return this.http.get(this.apiUrl);
   }
 
-  getAluno(id: number): Observable<any> {
+  getAluno(id: string): Observable<any> {
     return this.http.get(`${this.apiUrl}/${id}`);
   }
 
@@ -26,7 +26,7 @@ export class EscolaService {
     return this.http.put(`${this.apiUrl}/${id}`, aluno);
   }
 
-  deleteAluno(id: number): Observable<any> {
+  deleteAluno(id: string): Observable<any> {
     return this.http.delete(`${this.apiUrl}/${id}`);
   }
 }
