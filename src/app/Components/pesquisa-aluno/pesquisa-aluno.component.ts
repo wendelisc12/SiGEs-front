@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component,EventEmitter, Output } from '@angular/core';
 
 @Component({
   selector: 'app-pesquisa-aluno',
@@ -6,5 +6,21 @@ import { Component } from '@angular/core';
   styleUrls: ['./pesquisa-aluno.component.css']
 })
 export class PesquisaAlunoComponent {
+  @Output() dadosPesquisa: EventEmitter<any> = new EventEmitter<any>();
 
+  pesquisa: any = {
+    matricula: '',
+    serie: '',
+    turno: ''
+  };
+
+  pesquisar(): void {
+    this.dadosPesquisa.emit(this.pesquisa)
+    
+    this.pesquisa = {
+      matricula: '',
+      serie: '',
+      turno: ''
+    };
+  }
 }

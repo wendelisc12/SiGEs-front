@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
@@ -29,9 +28,10 @@ import { MatListModule } from '@angular/material/list';
 import { FinanceiroPageComponent } from './Pages/financeiro-page/financeiro-page.component';
 import { DocumentacaoPageComponent } from './Pages/documentacao-page/documentacao-page.component';
 import { PesquisaAlunoComponent } from './Components/pesquisa-aluno/pesquisa-aluno.component';
-import { VizualizarAlunoPageComponent } from './vizualizar-aluno-page/vizualizar-aluno-page.component';
+import { VizualizarAlunoPageComponent } from './Pages/vizualizar-aluno-page/vizualizar-aluno-page.component';
 
 import { EscolaService } from './services/escola.service';
+import { FinanceiroAlunoPageComponent } from './Pages/financeiro-aluno-page/financeiro-aluno-page.component';
 
 export const MY_DATE_FORMATS = {
   parse: {
@@ -45,9 +45,10 @@ export const MY_DATE_FORMATS = {
   },
 };
 
+
 @NgModule({
   declarations: [
-    AppComponent,ConsultarAlunoPageComponent,PesquisaAlunoComponent, AdicionarAlunosPageComponent, InicioPageComponent, SidebarComponent, FinanceiroPageComponent, DocumentacaoPageComponent, VizualizarAlunoPageComponent,
+    AppComponent,ConsultarAlunoPageComponent,PesquisaAlunoComponent, AdicionarAlunosPageComponent, InicioPageComponent, SidebarComponent, FinanceiroPageComponent, DocumentacaoPageComponent, VizualizarAlunoPageComponent, FinanceiroAlunoPageComponent,
   ],
   imports: [
     BrowserModule,

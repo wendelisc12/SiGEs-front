@@ -1,0 +1,80 @@
+<div [class]="modalClass">
+    <div class="modal-box">
+        <div class="modal-content">
+            <h1 class="title-modal">Atualizar pagamento do aluno</h1>
+            <div class="boxes-modal">
+                <div class="box-modal ultimo-pagamento">
+                    <h2>Data do último pagamento:</h2>
+                    <h2>{{aluno.data_pagamento}}</h2>
+                </div>
+
+                <div class="box-modal">
+                    <h2>Data do próximo pagamento:</h2>
+                    <h2>{{novaDataPagamento}}</h2>
+                </div>
+            </div>
+                <div>
+                    <h2>Deseja confirmar o pagamento deste mês?</h2>
+                    <button class="atualizar-pagamento" (click)="onAtualizarPagamento()">Atualizar</button>
+                    <button class="fechar-pagamento" (click)="closeModal()">Cancelar</button>
+                </div>
+
+        </div>
+    </div>
+</div>
+
+<div id="financeiro-box">
+    <div class="header-vizualizar">
+        <h1>Detalhes financeiros do aluno</h1>
+    </div>
+
+    <hr>
+    <div class="side-side">
+        <div class="w-50">
+            <div class="section-vizualizar">
+                <h2>Matrícula</h2>
+                <h1>{{aluno.matricula}}</h1>
+            </div>
+
+            <div class="section-vizualizar">
+                <h2>Nome do aluno</h2>
+                <h1>{{aluno.nome_aluno}}</h1>
+            </div>
+        </div>
+        <div class="w-50">
+            <div class="section-vizualizar">
+                <h2>Série:</h2>
+                <h1>{{aluno.serie}}</h1>
+            </div>
+
+            <div class="section-vizualizar">
+                <h2>Turno:</h2>
+                <h1>{{aluno.horario}}</h1>
+            </div>
+        </div>
+    </div>
+
+    <hr>
+    <div class="side-side">
+        <div class="section-vizualizar w-50">
+            <h2>Data de pagamento</h2>
+            <h1>{{aluno.data_pagamento}}</h1>
+        </div>
+
+        <div class="section-vizualizar w-50">
+            <h2>Valor da mensalidade</h2>
+            <h1>R$: {{aluno.valor_mensalidade}}</h1>
+        </div>
+
+    </div>
+
+    <div class="section-vizualizar">
+        <h2>Situação atual:</h2>
+        <h1 [ngClass]="aluno.situacao == 'Adimplente' ? 'adimplente' : 'inadimplente'">{{aluno.situacao}}</h1>
+        <div class="buttons-pagamento">
+            <button class="atualizar" (click)="onAtualizarPagamentoModal()">Atualizar pagamento</button>
+        </div>
+    </div>
+
+
+</div>

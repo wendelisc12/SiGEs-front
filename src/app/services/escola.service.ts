@@ -14,7 +14,7 @@ export class EscolaService {
     return this.http.get(this.apiUrl);
   }
 
-  getAluno(id: number): Observable<any> {
+  getAluno(id: string): Observable<any> {
     return this.http.get(`${this.apiUrl}/${id}`);
   }
 
@@ -22,11 +22,20 @@ export class EscolaService {
     return this.http.post(this.apiUrl, aluno);
   }
 
-  updateAluno(id: number, aluno: any): Observable<any> {
+  updateAluno(id: string, aluno: any): Observable<any> {
     return this.http.put(`${this.apiUrl}/${id}`, aluno);
   }
 
-  deleteAluno(id: number): Observable<any> {
+  deleteAluno(id: string): Observable<any> {
     return this.http.delete(`${this.apiUrl}/${id}`);
+  }
+  pesquisarAlunos(pesquisa: any): Observable<any> {
+    return this.http.post(`${this.apiUrl}/pesquisar-alunos`, pesquisa);
+  }
+  updateDataPagamento(id: string, data_pagamento: string): Observable<any> {
+    const payload = { data_pagamento: data_pagamento };
+    const headers = { 'Content-Type': 'application/json' };
+  
+    return this.http.put(`${this.apiUrl}/atualizar-pagamento/${id}`, payload, { headers: headers });
   }
 }

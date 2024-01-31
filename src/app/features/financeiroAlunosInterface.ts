@@ -1,7 +1,9 @@
 export interface financeiroAlunos {
-    name: string;
+    nome_aluno: string;
     matricula: string;
-    dataPagamento: string;
+    horario:string;
+    serie:string;
+    data_pagamento: string;
     situacao: string;
-    vizualizar: string;
+    valor_mensalidade: string;
   }
