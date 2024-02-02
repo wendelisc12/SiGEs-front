@@ -64,6 +64,10 @@ export class AdicionarAlunosPageComponent {
     this.aluno.horario = event.value;
   }
 
+  onSerieChange(event: any): void {
+    this.aluno.serie = event.value;
+  }
+
   gerarMatricula(): void {
     const anoAtual = new Date().getFullYear();
     this.aluno.matricula = `MAT${Math.floor(1000 + Math.random() * 9000).toString()}-${anoAtual}`;

@@ -5,94 +5,109 @@
     </div>
     <h2 class="basic-infos">Informações básicas</h2>
     <form #form="ngForm" (ngSubmit)="adicionarAluno(form)">
-    <div id="form-container">
-        <div class="form-group">
-            <mat-form-field class="container-50">
-                <mat-label>Nome do aluno</mat-label>
-                <input matInput [(ngModel)]="aluno.nome_aluno" name="nome_aluno" required >
-            </mat-form-field>
-            <mat-form-field class="container-50">
-                <mat-label>Nome do responsável</mat-label>
-                <input matInput matInput [(ngModel)]="aluno.nome_responsavel" name="nome_responsavel" required>
-            </mat-form-field>
+        <div id="form-container">
+            <div class="form-group">
+                <mat-form-field class="container-50">
+                    <mat-label>Nome do aluno</mat-label>
+                    <input matInput [(ngModel)]="aluno.nome_aluno" name="nome_aluno" required>
+                </mat-form-field>
+                <mat-form-field class="container-50">
+                    <mat-label>Nome do responsável</mat-label>
+                    <input matInput matInput [(ngModel)]="aluno.nome_responsavel" name="nome_responsavel" required>
+                </mat-form-field>
+            </div>
+
+            <div class="form-group">
+                <mat-form-field class="container-50">
+                    <mat-label>Data de nascimento</mat-label>
+                    <input matInput [matDatepicker]="pickerNascimento" name="data_nascimento" required 
+                           placeholder="Data de nascimento do aluno" 
+                           [(ngModel)]="aluno.data_nascimento" (dateChange)="onDateChange($event, 'nascimento')">
+                    <mat-datepicker-toggle matSuffix [for]="pickerNascimento"></mat-datepicker-toggle>
+                    <mat-datepicker #pickerNascimento></mat-datepicker>
+                </mat-form-field>
+
+                <mat-form-field class="container-50">
+                    <mat-label>CPF do responsável</mat-label>
+                    <input matInput matInput [(ngModel)]="aluno.cpf_responsavel" name="cpf_responsavel" required>
+                </mat-form-field>
+            </div>
+
+            <div class="form-group">
+                <mat-form-field class="container-50">
+                    <mat-label>Identidade do aluno</mat-label>
+                    <input matInput matInput [(ngModel)]="aluno.identidade_aluno" name="identidade_aluno" required>
+                </mat-form-field>
+
+                <mat-form-field class="container-50">
+                    <mat-label>Telefone</mat-label>
+                    <input matInput matInput [(ngModel)]="aluno.telefone" name="telefone" required>
+                </mat-form-field>
+            </div>
+
+            <hr>
+
+            <h2 class="basic-infos">Informações escolares</h2>
+
+            <div class="form-group">
+                <mat-form-field class="container-50">
+                    <mat-label>Turno</mat-label>
+                    <mat-select [(ngModel)]="aluno.horario" (change)="onTurnoChange($event)" name="horario" required>
+                        <mat-option value="manha">Manhã</mat-option>
+                        <mat-option value="tarde">Tarde</mat-option>
+                    </mat-select>
+                </mat-form-field>
+
+                <mat-form-field class="container-50">
+                    <mat-label>Série</mat-label>
+                    <mat-select [(ngModel)]="aluno.serie" (change)="onSerieChange($event)" name="serie" required>
+                        <mat-option value="1º-A">1º-A</mat-option>
+                        <mat-option value="1º-B">1º-B</mat-option>
+                        <mat-option value="2º-A">2º-A</mat-option>
+                        <mat-option value="2º-B">2º-B</mat-option>
+                        <mat-option value="3º-A">3º-A</mat-option>
+                        <mat-option value="3º-B">3º-B</mat-option>
+                        <mat-option value="4º-A">4º-A</mat-option>
+                        <mat-option value="4º-B">4º-B</mat-option>
+                        <mat-option value="5º-A">5º-A</mat-option>
+                        <mat-option value="5º-B">5º-B</mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+
+            <hr>
+            <h2 class="basic-infos">Endereço</h2>
+            <div class="form-group">
+                <mat-form-field class="container-70">
+                    <mat-label>Endereço</mat-label>
+                    <input matInput [(ngModel)]="aluno.endereco" name="endereco" required>
+                </mat-form-field>
+                <mat-form-field class="container-30">
+                    <mat-label>CEP</mat-label>
+                    <input matInput [(ngModel)]="aluno.cep" name="cep" required>
+                </mat-form-field>
+            </div>
+
+            <hr>
+            <h2 class="basic-infos">Informações de pagamento</h2>
+            <div class="form-group">
+                <mat-form-field class="container-50">
+                    <mat-label>Data de pagamento</mat-label>
+                    <input matInput [matDatepicker]="pickerPagamento" name="data_pagamento" required
+                        placeholder="Data de pagamento do aluno" [(ngModel)]="aluno.data_pagamento"
+                        (dateChange)="onDateChange($event, 'pagamento')">
+                    <mat-datepicker-toggle matSuffix [for]="pickerPagamento"></mat-datepicker-toggle>
+                    <mat-datepicker #pickerPagamento></mat-datepicker>
+                </mat-form-field>
+
+                <mat-form-field class="container-50">
+                    <mat-label>Valor da mensalidade</mat-label>
+                    <input matInput [(ngModel)]="aluno.valor_mensalidade" name="valor_mensalidade" required>
+                </mat-form-field>
+            </div>
+
+            <button class="container-100 submit-button" type="submit">Adicionar</button>
+
         </div>
-
-        <div class="form-group">
-            <mat-form-field class="container-50">
-                <mat-label>Data de nascimento</mat-label>
-                <input matInput [matDatepicker]="pickerNascimento" name="data_nascimento" required placeholder="Data de nascimento do aluno" (dateChange)="onDateChange($event, 'nascimento')">
-                <mat-datepicker-toggle matSuffix [for]="pickerNascimento"></mat-datepicker-toggle>
-                <mat-datepicker #pickerNascimento></mat-datepicker>
-            </mat-form-field>
-
-            <mat-form-field class="container-50">
-                <mat-label>CPF do responsável</mat-label>
-                <input matInput  matInput [(ngModel)]="aluno.cpf_responsavel" name="cpf_responsavel" required>
-            </mat-form-field>
-        </div>
-
-        <div class="form-group">
-            <mat-form-field class="container-50">
-                <mat-label>Identidade do aluno</mat-label>
-                <input matInput  matInput [(ngModel)]="aluno.identidade_aluno" name="identidade_aluno" required>
-            </mat-form-field>
-
-            <mat-form-field class="container-50">
-                <mat-label>Telefone</mat-label>
-                <input matInput matInput [(ngModel)]="aluno.telefone" name="telefone" required>
-            </mat-form-field>
-        </div>
-
-        <hr>
-
-        <h2 class="basic-infos">Informações escolares</h2>
-        
-        <div class="form-group">
-            <mat-form-field class="container-50">
-                <mat-label>Turno</mat-label>
-                <mat-select [(ngModel)]="aluno.horario" (change)="onTurnoChange($event)" name="horario" required>
-                  <mat-option value="manha">Manhã</mat-option>
-                  <mat-option value="tarde">Tarde</mat-option>
-                </mat-select>
-              </mat-form-field>
-
-            <mat-form-field class="container-50">
-                <mat-label>Série</mat-label>
-                <input matInput [(ngModel)]="aluno.serie" required name="serie">
-            </mat-form-field>
-        </div>
-
-        <hr>
-        <h2 class="basic-infos">Endereço</h2>
-        <div class="form-group">
-            <mat-form-field class="container-70">
-                <mat-label>Endereço</mat-label>
-                <input matInput  [(ngModel)]="aluno.endereco" name="endereco" required>
-            </mat-form-field>
-            <mat-form-field class="container-30">
-                <mat-label >CEP</mat-label>
-                <input matInput [(ngModel)]="aluno.cep" name="cep" required>
-            </mat-form-field>
-        </div>
-
-        <hr>
-        <h2 class="basic-infos">Informações de pagamento</h2>
-        <div class="form-group">
-            <mat-form-field class="container-50">
-                <mat-label>Data de pagamento</mat-label>
-                <input matInput [matDatepicker]="pickerPagamento" placeholder="Data de pagamento" name="data_pagamento" required (dateChange)="onDateChange($event, 'pagamento')" [ngModel]="selectedDate">
-                <mat-datepicker-toggle matSuffix [for]="pickerPagamento"></mat-datepicker-toggle>
-                <mat-datepicker #pickerPagamento></mat-datepicker>
-              </mat-form-field>              
-
-            <mat-form-field class="container-50">
-                <mat-label>Valor da mensalidade</mat-label>
-                <input matInput  [(ngModel)]="aluno.valor_mensalidade" name="valor_mensalidade" required>
-            </mat-form-field>
-        </div>
-
-        <button class="container-100 submit-button" type="submit">Adicionar</button>
-
-    </div>
     </form>
 </div>
