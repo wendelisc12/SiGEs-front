@@ -2,11 +2,20 @@
     <input type="text" id="matricula" placeholder="Matrícula" [(ngModel)]="pesquisa.matricula">
     <select name="serie" id="serie" [(ngModel)]="pesquisa.serie">
         <option value="" selected disabled>Série</option>
-        <option value="1">1 ano</option>
+        <option value="1º-A">1º A</option>
+        <option value="1º-B">1º B</option>
+        <option value="2º-A">2º A</option>
+        <option value="2º-B">2º B</option>
+        <option value="3º-A">3º A</option>
+        <option value="3º-B">3º B</option>
+        <option value="4º-A">4º A</option>
+        <option value="4º-B">4º B</option>
+        <option value="5º-A">5º A</option>
+        <option value="5º-B">5º B</option>
     </select>
     <select name="turno" id="turno" [(ngModel)]="pesquisa.turno">
         <option value="" selected disabled>Turno</option>
-        <option value="manha">Manhã</option>
+        <option value="manhã">Manhã</option>
         <option value="tarde">Tarde</option>
     </select>
     <button id="pesquisa-button" (click)="pesquisar()">

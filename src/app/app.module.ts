@@ -29,7 +29,7 @@ import { FinanceiroPageComponent } from './Pages/financeiro-page/financeiro-page
 import { DocumentacaoPageComponent } from './Pages/documentacao-page/documentacao-page.component';
 import { PesquisaAlunoComponent } from './Components/pesquisa-aluno/pesquisa-aluno.component';
 import { VizualizarAlunoPageComponent } from './Pages/vizualizar-aluno-page/vizualizar-aluno-page.component';
-
+import { SafeUrlPipe } from './pipes/SafeUrlPipe';
 import { EscolaService } from './services/escola.service';
 import { FinanceiroAlunoPageComponent } from './Pages/financeiro-aluno-page/financeiro-aluno-page.component';
 
@@ -48,7 +48,7 @@ export const MY_DATE_FORMATS = {
 
 @NgModule({
   declarations: [
-    AppComponent,ConsultarAlunoPageComponent,PesquisaAlunoComponent, AdicionarAlunosPageComponent, InicioPageComponent, SidebarComponent, FinanceiroPageComponent, DocumentacaoPageComponent, VizualizarAlunoPageComponent, FinanceiroAlunoPageComponent,
+    AppComponent, SafeUrlPipe,ConsultarAlunoPageComponent,PesquisaAlunoComponent, AdicionarAlunosPageComponent, InicioPageComponent, SidebarComponent, FinanceiroPageComponent, DocumentacaoPageComponent, VizualizarAlunoPageComponent, FinanceiroAlunoPageComponent,
   ],
   imports: [
     BrowserModule,

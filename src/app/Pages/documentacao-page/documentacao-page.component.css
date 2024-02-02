@@ -3,12 +3,12 @@
     background-color: white;
     border-radius: 15px;
     box-shadow: 0 0 3px rgba(82, 82, 82, 0.514);
-    padding: 40px 30px;
-    height: 500px;
+    padding: 40px 30px 60px 30px;
+    height: 550px;
 }
 
 #documentos-box{
-    border: 3px solid rgb(124, 124, 124);
+    border: 3px dotted rgb(124, 124, 124);
     background-color: rgba(124, 124, 124, 0.171);
     display: flex;
     flex-direction: column;
@@ -17,7 +17,7 @@
     cursor: pointer;
     width: 250px;
     height: 150px;
-    border-radius: 15px;
+    border-radius: 8px;
     margin-top: 40px;
 }
 #documentos-box svg{
@@ -26,4 +26,27 @@
 
 #documentos{
     display: none;
+}
+
+.pdfshow{
+    width: 300px;
+    height: 150px;
+    margin: 30px 0;   
+}
+
+.pdfshow a{
+    text-decoration: none !important;
+    color: #000;
+}
+iframe{
+    border-radius: 8px 8px 0 0 ;
+}
+
+.text-pdf{
+    padding: 15px 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 0 0 8px 8px;
+    background-color: rgb(158, 158, 158);
 }
