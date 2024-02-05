@@ -9,6 +9,7 @@ import { EscolaService } from 'src/app/services/escola.service';
   styleUrls: ['./financeiro-page.component.css']
 })
 export class FinanceiroPageComponent implements OnInit {
+  dadosPesquisa: any;
   alunos: financeiroAlunos[] = [];
   displayedColumns: string[] = ['matricula', 'name', 'dataPagamento', 'situacao', "vizualizar"];
 
@@ -24,7 +25,6 @@ export class FinanceiroPageComponent implements OnInit {
     this.escolaService.getAlunos().subscribe(
       (data) => {
         this.alunos = data;
-        console.log(data);
         this.updateSituacao();
         this.dataSource = this.alunos
       },
@@ -35,6 +35,7 @@ export class FinanceiroPageComponent implements OnInit {
   }
 
   updateSituacao() {
+    
     const hoje = new Date();
   
     this.alunos.forEach(aluno => {
@@ -47,4 +48,19 @@ export class FinanceiroPageComponent implements OnInit {
       }
     });
   }
+
+  pesquisar(dados: any): void {
+    this.dadosPesquisa = dados;
+    this.escolaService.pesquisarAlunos(dados).subscribe(
+      (data) => {
+        this.alunos = data;
+        this.updateSituacao();
+        this.dataSource = this.alunos
+      },
+      (erro) => {
+        console.error('Erro na pesquisa de alunos', erro);
+      }
+    );
+  }
+  
 }
