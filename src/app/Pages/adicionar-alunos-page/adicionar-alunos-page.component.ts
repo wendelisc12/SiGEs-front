@@ -37,6 +37,14 @@ export class AdicionarAlunosPageComponent {
     this.escolaService.getAluno(alunoId).subscribe(
       (aluno: Aluno) => {
         this.aluno = aluno;
+        if (this.aluno.data_nascimento) {
+          this.aluno.data_nascimentoDate = moment(this.aluno.data_nascimento, 'DD/MM/YYYY').toDate();
+        }
+  
+        // Converte a string de data de pagamento de volta para um objeto Date ao editar
+        if (this.aluno.data_pagamento) {
+          this.aluno.data_pagamentoDate = moment(this.aluno.data_pagamento, 'DD/MM/YYYY').toDate();
+        }
       },
       (error) => {
         console.error('Erro ao carregar dados do aluno para edição:', error);
