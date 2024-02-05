@@ -22,7 +22,7 @@
                     <mat-label>Data de nascimento</mat-label>
                     <input matInput [matDatepicker]="pickerNascimento" name="data_nascimento" required 
                            placeholder="Data de nascimento do aluno" 
-                           [(ngModel)]="aluno.data_nascimento" (dateChange)="onDateChange($event, 'nascimento')">
+                           [(ngModel)]="aluno.data_nascimentoDate" (dateChange)="onDateChange($event, 'nascimento')">
                     <mat-datepicker-toggle matSuffix [for]="pickerNascimento"></mat-datepicker-toggle>
                     <mat-datepicker #pickerNascimento></mat-datepicker>
                 </mat-form-field>
@@ -94,7 +94,7 @@
                 <mat-form-field class="container-50">
                     <mat-label>Data de pagamento</mat-label>
                     <input matInput [matDatepicker]="pickerPagamento" name="data_pagamento" required
-                        placeholder="Data de pagamento do aluno" [(ngModel)]="aluno.data_pagamento"
+                        placeholder="Data de pagamento do aluno" [(ngModel)]="aluno.data_pagamentoDate"
                         (dateChange)="onDateChange($event, 'pagamento')">
                     <mat-datepicker-toggle matSuffix [for]="pickerPagamento"></mat-datepicker-toggle>
                     <mat-datepicker #pickerPagamento></mat-datepicker>
