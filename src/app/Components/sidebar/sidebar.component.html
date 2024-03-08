@@ -9,8 +9,7 @@
         Início
       </div>
     </a>
-
-    <!-- Dropdown para a opção "Aluno" -->
+    
     <a mat-list-item [matMenuTriggerFor]="alunoMenu" routerLink="/aluno" routerLinkActive="active" [class.menu-opened]="showAlunoMenu" (click)="toggleAlunoMenu()">
       <div class="item-list">
         <mat-icon>person</mat-icon>
@@ -20,15 +19,18 @@
     <mat-menu class="custom-menu-background" #alunoMenu="matMenu">
       <a class="submenu-item" mat-menu-item routerLink="/aluno/adicionar">Adicionar aluno</a>
       <a class="submenu-item" mat-menu-item routerLink="/aluno/consultar">Consultar aluno</a>
-      <!-- Adicione mais opções conforme necessário -->
     </mat-menu>
 
-    <a mat-list-item routerLink="/financeiro" routerLinkActive="active">
+    <a mat-list-item [matMenuTriggerFor]="financeiroMenu" routerLink="/financeiro" routerLinkActive="active" [class.menu-opened]="showProfessorMenu" (click)="toggleProfessorMenu()">
       <div class="item-list">
         <mat-icon>account_balance_wallet</mat-icon>
         Financeiro
       </div>
     </a>
+    <mat-menu class="custom-menu-background" #financeiroMenu="matMenu">
+      <a class="submenu-item" mat-menu-item routerLink="/financeiro/alunos">Financeiro aluno</a>
+      <a class="submenu-item" mat-menu-item routerLink="/financeiro/professores">Financeiro professor</a>
+    </mat-menu>
 
     <a mat-list-item routerLink="/documentacao" routerLinkActive="active">
       <div class="item-list">
