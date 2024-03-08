@@ -11,6 +11,10 @@ export class SidebarComponent {
   showAlunoMenu: boolean = false;
   alunosActive: boolean = false;
 
+  @ViewChild(MatMenuTrigger) professorMenuTrigger?: MatMenuTrigger;
+  showProfessorMenu: boolean = false;
+  professorActive: boolean = false;
+
   toggleAlunoMenu() {
     if (this.alunoMenuTrigger) {
       this.showAlunoMenu = !this.showAlunoMenu;
@@ -19,6 +23,18 @@ export class SidebarComponent {
       this.alunoMenuTrigger.menuClosed.subscribe(() => {
         this.showAlunoMenu = false;
         this.alunosActive = false;
+      });
+    }
+  }
+
+  toggleProfessorMenu() {
+    if (this.professorMenuTrigger) {
+      this.showProfessorMenu = !this.showProfessorMenu;
+      this.professorActive = !this.professorActive;
+
+      this.professorMenuTrigger.menuClosed.subscribe(() => {
+        this.showProfessorMenu = false;
+        this.professorActive = false;
       });
     }
   }
