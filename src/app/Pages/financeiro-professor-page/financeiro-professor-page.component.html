@@ -1,0 +1,62 @@
+<div [class]="modalClass">
+    <div class="modal-box">
+        <div class="modal-content">
+            <h1 class="title-modal">Adicionar um novo professor</h1>
+            <div class="boxes-modal">
+                <input type="text" placeholder="Insira o nome do professor" [(ngModel)]="professorNome">
+                <button (click)="inserirProfessor()" id="adicionar">Adicionar</button>
+                <button (click)="closeModal()" id="cancelar">Cancelar</button>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<div class="principal">
+    <h1>Pesquisar um professor</h1>
+    <div id="pesquisarProf">
+        <input type="text" placeholder="Pesquisar professor" id="searchProfessor" [(ngModel)]="nomeProfessor">
+        <button id="buttonSearchProfessor" (click)="pesquisarProfessor()">
+            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-search"
+                viewBox="0 0 16 16">
+                <path
+                    d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0" />
+            </svg>
+        </button>
+    </div>
+
+</div>
+
+<div class="tabela">
+    <button (click)="addProfessor()" id="addProf">Adicionar professor</button>
+    <mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+        <ng-container matColumnDef="name">
+            <mat-header-cell *matHeaderCellDef> Nome </mat-header-cell>
+            <mat-cell *matCellDef="let element"> {{element.nome}} </mat-cell>
+        </ng-container>
+    
+        <ng-container matColumnDef="situacao">
+            <mat-header-cell *matHeaderCellDef> Situação </mat-header-cell>
+            <mat-cell *matCellDef="let element"> <span [ngClass]="{
+                'nao-pago': element.situacao === 'Não pago',
+                'pago': element.situacao === 'Pago'
+            }">{{element.situacao}}</span></mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="opcoes">
+            <mat-header-cell *matHeaderCellDef>Opções </mat-header-cell>
+            <mat-cell *matCellDef="let element">
+                <button *ngIf="element.situacao !== 'Pago'" (click)="realizarPagamento(element)" id="realizarPagamento">Realizar pagamento</button>
+                <button id="deletarProfessor" (click)="deletarProfessor(element.id)">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#fff" class="bi bi-trash-fill" viewBox="0 0 16 16">
+                        <path d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5M8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5m3 .5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 1 0"/>
+                      </svg>
+                </button>
+            </mat-cell>    
+        </ng-container>
+    
+        <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+    </mat-table>
+</div>

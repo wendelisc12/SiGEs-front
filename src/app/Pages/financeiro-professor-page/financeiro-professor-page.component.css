@@ -1,0 +1,218 @@
+.principal{
+    background-color: white;
+    box-shadow: 2px 2px 5px rgba(95, 95, 95, 0.3) ;
+    border-radius: 20px;
+    margin: 10px;
+    padding: 20px;
+}
+
+.tabela{
+    margin: 20px;
+    background-color: white;
+    border-radius: 15px;
+
+}
+
+#pesquisarProf{
+    display: flex;
+}
+
+#searchProfessor{
+    width: 95%;
+    height: 50px;
+    border-radius: 10px 0 0 10px;
+    border: 0;
+    padding: 10px;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid lightgrey;
+    font-size: 16px;
+    background-color: white;
+}
+
+#buttonSearchProfessor{
+    width: 5%;
+    border: 0;
+    background-color: #FFF647;
+    border: 0;
+    cursor: pointer;
+    transition: all 400ms;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0 10px 10px 0;
+}
+
+@keyframes modal-animation {
+    from {
+        transform: scale(0, 0);
+        opacity: 0;
+    }
+
+    to {
+        transform: scale(1, 1);
+        opacity: 1;
+    }
+}
+
+.modal {
+    animation: modal-animation 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    display: none;
+}
+
+.modal.open {
+    display: flex;
+    background-color: rgba(73, 73, 73, 0.164);
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    z-index: 9999999;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-content {
+    background-color: white;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 5px;
+    box-shadow: 2px 2px 5px rgba(46, 46, 46, 0.253);
+}
+
+.modal-content h2{
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+.title-modal{
+    font-size: 1.7em;
+}
+
+.box-modal{
+    border: 1px solid #217ed4;
+    color: #1a6ab4;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.boxes-modal{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.boxes-modal input{
+    height: 50px;
+    padding: 8px;
+    border: 1px solid rgb(163, 163, 163);
+    font-size: 16px;
+    border-radius: 10px;
+}
+
+.boxes-modal button{
+    height: 45px;
+    border: 0;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 400ms;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+#adicionar:hover{
+    box-shadow: 2px 2px 5px rgba(59, 59, 59, 0.486);
+    filter: brightness(0.9);
+}
+
+#adicionar{
+    background-color: rgb(64, 236, 64);
+    color: white;
+}
+
+#cancelar{
+    background-color: transparent;
+    border: 2px solid rgb(255, 60, 60);
+    color: rgb(255, 60, 60);
+}
+
+#cancelar:hover{
+    background-color: rgb(255, 60, 60);
+    color: white;
+}
+
+#addProf{
+    margin: 5px 0 20px 0;
+    width: 190px;
+    border: 0;
+    cursor: pointer;
+    height: 50px;
+    border-radius: 10px;
+    font-size: 16px;
+    background-color: rgb(0, 152, 223);
+    color: white;
+    font-weight: bold;
+    transition: all 400ms;
+}
+
+#addProf:hover{
+    box-shadow: 2px 2px 5px rgba(59, 59, 59, 0.486);
+    filter: brightness(0.9);
+}
+
+.nao-pago{
+    background-color: rgb(255, 60, 60);
+    color: white;
+    font-weight: bold;
+    border-radius: 8px;
+    padding: 10px;
+    display: inline-block;
+    width: 100px;
+    text-align: center;
+}
+
+.pago{
+    background-color: rgb(27, 206, 27);
+    color: white;
+    font-weight: bold;
+    border-radius: 8px;
+    padding: 10px;
+    display: inline-block;
+    width: 100px;
+    text-align: center;
+}
+
+#realizarPagamento{
+    height: 40px;
+    width: 160px;
+    margin-right: 15px;
+    border-radius: 8px;
+    border: 0;
+    font-size: 14px;
+    font-weight: bold;
+    color: white;
+    background-color: #1a6ab4;
+    transition: all 400ms;
+    cursor: pointer;
+}
+
+#realizarPagamento:hover, #deletarProfessor:hover{
+    box-shadow: 2px 2px 5px rgba(59, 59, 59, 0.486);
+    filter: brightness(0.9);
+}
+
+#deletarProfessor{
+    background-color: rgb(255, 60, 60);
+    padding: 5px;
+    border: 0;
+    height: 40px;
+    width: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 400ms;
+}
