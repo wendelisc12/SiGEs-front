@@ -13,6 +13,10 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
+            "allowedCommonJsDependencies": [
+              "sweetalert2",
+              "moment"
+            ],
             "outputPath": "dist/escola-formulario",
             "index": "src/index.html",
             "main": "src/main.ts",
@@ -29,6 +33,8 @@
               "src/styles.css"
             ],
             "scripts": [],
+            "commonjsDependencies": true,
+            "amdDependencies": true,
             "optimization": true
           },
           "configurations": {
@@ -100,6 +106,7 @@
       }
     }
   },
+  
   "cli": {
     "analytics": "556a7bad-448f-4091-b1f7-fd08b50bcee3"
   }
