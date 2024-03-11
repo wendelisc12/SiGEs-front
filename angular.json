@@ -29,6 +29,8 @@
               "src/styles.css"
             ],
             "scripts": [],
+            "commonjsDependencies": true,
+            "amdDependencies": true,
             "optimization": true
           },
           "configurations": {
@@ -100,6 +102,7 @@
       }
     }
   },
+  
   "cli": {
     "analytics": "556a7bad-448f-4091-b1f7-fd08b50bcee3"
   }
