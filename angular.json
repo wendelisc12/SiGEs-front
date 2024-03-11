@@ -33,7 +33,6 @@
               "src/styles.css"
             ],
             "scripts": [],
-            "commonjsDependencies": true,
             "amdDependencies": true,
             "optimization": true
           },
